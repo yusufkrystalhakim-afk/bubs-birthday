@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise 🎁</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="intro">
+    <button id="openButton">🎁 Open the surprise!</button>
+  </div>
+
+  <div id="content" class="hidden">
+    <img src="gif.gif" alt="cute gif" id="centerGif" />
+    <div id="textContainer">
+      <p id="message"></p>
+      <div id="navButtons" class="hidden">
+        <button id="prevBtn">〈</button>
+        <button id="nextBtn">〉</button>
+      </div>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="audio.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
