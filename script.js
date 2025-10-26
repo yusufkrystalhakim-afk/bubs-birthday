@@ -1,5 +1,4 @@
-// ====== CONFIGURATION ======
-alert('Script loaded!');
+// ====== TEXT LAYERS ======
 const messages = [
 `Hey you,
 
@@ -13,9 +12,6 @@ I'm so sorry if I had no time for you.
 I just wanted to know you bla bla bla.`
 ];
 
-let currentIndex = 0;
-let typingInterval;
-
 // ====== ELEMENTS ======
 const openButton = document.getElementById("openButton");
 const intro = document.getElementById("intro");
@@ -27,18 +23,27 @@ const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const bgMusic = document.getElementById("bgMusic");
 
-// ====== START FUNCTION ======
+let currentIndex = 0;
+let typingInterval;
+
+// ====== START ======
 openButton.addEventListener("click", () => {
+  // Fade out intro
   intro.style.opacity = 0;
   setTimeout(() => {
     intro.classList.add("hidden");
     content.classList.add("show");
     gif.classList.add("show");
-    bgMusic.play().catch(()=>{});
-    startTyping(messages[currentIndex]);
-  }, 800);
 
-  generateSnow();
+    // Try playing music
+    bgMusic.volume = 0.6;
+    bgMusic.play().catch(() => {
+      console.warn("Autoplay blocked, user must interact again.");
+    });
+
+    generateSnow();
+    startTyping(messages[currentIndex]);
+  }, 1000);
 });
 
 // ====== TYPEWRITER EFFECT ======
@@ -47,7 +52,8 @@ function startTyping(text) {
   messageEl.classList.remove("show");
   clearInterval(typingInterval);
   let i = 0;
-  messageEl.classList.add("show");
+
+  setTimeout(() => messageEl.classList.add("show"), 300);
 
   typingInterval = setInterval(() => {
     if (i < text.length) {
@@ -79,10 +85,10 @@ prevBtn.addEventListener("click", () => {
 
 function fadeTransition() {
   messageEl.classList.remove("show");
-  setTimeout(() => startTyping(messages[currentIndex]), 500);
+  setTimeout(() => startTyping(messages[currentIndex]), 600);
 }
 
-// ====== SNOW EFFECT ======
+// ====== SALJU ======
 function generateSnow() {
   const numFlakes = 35;
   for (let i = 0; i < numFlakes; i++) {
@@ -96,4 +102,3 @@ function generateSnow() {
     document.body.appendChild(snowflake);
   }
 }
-
