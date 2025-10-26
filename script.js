@@ -1,4 +1,5 @@
 // ====== CONFIGURATION ======
+alert('Script loaded!');
 const messages = [
 `Hey you,
 
@@ -95,3 +96,4 @@ function generateSnow() {
     document.body.appendChild(snowflake);
   }
 }
+
