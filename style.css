@@ -33,6 +33,7 @@ body {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom right, #fde6ef, #f9e2c9);
+   z-index: 10;
 }
 
 #openButton {
@@ -141,3 +142,4 @@ body {
   0% { transform: translateY(0); opacity: 0.8; }
   100% { transform: translateY(100vh); opacity: 0.3; }
 }
+
