@@ -1,9 +1,10 @@
 // ====== TEXT LAYERS ======
 const messages = [
-`Hey you,
+`Hey bubb,
 
 Just wanted to say... Happy Birthday! 🎂
-I hope your day is filled with laughter, warmth, and little moments that make you smile.
+i'm sorry we couldn't celebrate together this october maybe in december bub hehe.
+I hope everything you’re working on goes smoothly, you get even prettier, more diligent, and luck keeps finding its way to you 💕
 
 You deserve all the good things today and always. 💛`,
 
